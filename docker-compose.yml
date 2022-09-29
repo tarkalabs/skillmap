@@ -9,6 +9,8 @@ services:
       - POSTGRES_DB=testdb
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=admin
+    ports:
+      - "5433:5432"
   muservice:
     image: muservice.dev:latest
     build:
@@ -20,7 +22,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgres://postgres:admin@db/testdb?sslmode=disable
+      - DATABASE_URL=postgres://postgres:admin@db/skillmap_test?sslmode=disable
     ports:
       - "3000:3000"
 volumes:

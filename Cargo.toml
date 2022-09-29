@@ -1,15 +1,15 @@
 [package]
-name = "muservice"
+name = "skillmap"
 version = "0.1.0"
 authors = ["Vagmi Mudumbai <vagmi.mudumbai@gmail.com>"]
 edition = "2021"
 
 [lib]
-name = "libmuservice"
+name = "libskillmap"
 path = "src/lib.rs"
 
 [[bin]]
-name = "muservice"
+name = "skillmap"
 path = "src/main.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

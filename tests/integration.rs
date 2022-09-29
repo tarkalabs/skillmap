@@ -1,9 +1,9 @@
 use axum::{body::Body, http::Request};
 use http::StatusCode;
-use libmuservice::{app_state::AppState, db::DB, model::User, router::build_router};
+use libskillmap::{app_state::AppState, db::DB, model::User, router::build_router};
 use sqlx::PgPool;
-use tower::{ServiceExt, Service};
 use std::net::{SocketAddr, TcpListener};
+use tower::{Service, ServiceExt};
 
 #[tokio::test]
 async fn test_should_work() {
@@ -42,7 +42,11 @@ async fn test_create_user_handler(pool: PgPool) {
     let app_state = AppState::init_with_db(db);
     let mut router = build_router(app_state).await.unwrap();
 
-    let user = User { id: None, name: "userman".to_string(), email: "email@email.com".to_string() };
+    let user = User {
+        id: None,
+        name: "userman".to_string(),
+        email: "email@email.com".to_string(),
+    };
 
     let request = Request::builder()
         .method("POST")

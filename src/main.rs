@@ -1,15 +1,14 @@
 use color_eyre::{eyre::WrapErr, Result};
-use libmuservice::{router, server, app_state::AppState};
+use libskillmap::settings::SETTINGS;
+use libskillmap::{app_state::AppState, router, server};
 use tracing_error::ErrorLayer;
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
-use libmuservice::settings::SETTINGS;
 
 #[tokio::main]
 async fn main() -> Result<()> {
     tracing_subscriber::registry()
         .with(tracing_subscriber::EnvFilter::new(
-            std::env::var("RUST_LOG")
-                .unwrap_or_else(|_| SETTINGS.rust_log.clone().into()),
+            std::env::var("RUST_LOG").unwrap_or_else(|_| SETTINGS.rust_log.clone().into()),
         ))
         .with(tracing_subscriber::fmt::layer())
         .with(ErrorLayer::default())

@@ -1,8 +1,8 @@
 {
-  "host": "127.0.0.1",
+  "host": "0.0.0.0",
   "port": 3000,
   "database": {
-    "url": "postgres:///testdb?sslmode=disable"
+    "url": "postgres://postgres:admin@localhost:5433/skillmap_test?sslmode=disable"
   },
   "rust_log": "info,sqlx::query=off,tower_http=debug"
 }

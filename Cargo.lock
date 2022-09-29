@@ -744,27 +744,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "muservice"
-version = "0.1.0"
-dependencies = [
- "axum",
- "color-eyre",
- "config",
- "http",
- "hyper",
- "lazy_static",
- "serde",
- "serde_json",
- "sqlx",
- "tokio",
- "tower",
- "tower-http",
- "tracing",
- "tracing-error",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "nom"
 version = "7.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1229,6 +1208,27 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "16f1d0fef1604ba8f7a073c7e701f213e056707210e9020af4528e0101ce11a6"
 dependencies = [
  "libc",
+]
+
+[[package]]
+name = "skillmap"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "color-eyre",
+ "config",
+ "http",
+ "hyper",
+ "lazy_static",
+ "serde",
+ "serde_json",
+ "sqlx",
+ "tokio",
+ "tower",
+ "tower-http",
+ "tracing",
+ "tracing-error",
+ "tracing-subscriber",
 ]
 
 [[package]]
